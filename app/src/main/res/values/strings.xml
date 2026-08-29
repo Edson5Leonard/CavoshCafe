@@ -8,4 +8,9 @@
     <string name="perfil">Perfil</string>
     <string name="carrito">Carrito</string>
     <string name="comenzar">Comenzar</string>
+    <string name="correo">Correo</string>
+    <string name="contrase_a">Contraseña</string>
+    <string name="iniciar_sessi_n_usando">Iniciar sessión usando</string>
+    <string name="texto_apple">texto_apple</string>
+    <string name="tienes_nueva_cuenta">¿Tienes nueva cuenta?</string>
 </resources>
