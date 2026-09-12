@@ -1,53 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="150dp"
-    android:layout_height="210dp"
+    android:layout_width="140dp"
+    android:layout_height="180dp"
     android:layout_margin="8dp"
     app:cardCornerRadius="24dp"
-    app:cardElevation="4dp">
+    app:cardElevation="0dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/white">
 
-        <View
-            android:id="@+id/viewBgImage"
+        <!-- Contenedor Gris Claro para la taza -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvImageBg"
             android:layout_width="0dp"
-            android:layout_height="110dp"
+            android:layout_height="100dp"
             android:layout_margin="8dp"
-            android:background="@drawable/tv_bright_gray"
+            app:cardBackgroundColor="#EFEFEF"
+            app:cardCornerRadius="18dp"
+            app:cardElevation="0dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:id="@+id/ivProductImage"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:src="@drawable/ic_cafe_muestra"
-            app:layout_constraintBottom_toBottomOf="@id/viewBgImage"
-            app:layout_constraintEnd_toEndOf="@id/viewBgImage"
-            app:layout_constraintStart_toStartOf="@id/viewBgImage"
-            app:layout_constraintTop_toTopOf="@id/viewBgImage" />
+            <ImageView
+                android:id="@+id/ivProduct"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="8dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_cafe_remove" />
+        </androidx.cardview.widget.CardView>
 
         <TextView
             android:id="@+id/tvProductName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="6dp"
             android:layout_marginEnd="8dp"
-            android:maxLines="2"
             android:text="Caramel Macchiato"
             android:textColor="@color/gunmetal"
-            android:textSize="13sp"
+            android:textSize="12sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/viewBgImage" />
+            app:layout_constraintTop_toBottomOf="@id/cvImageBg" />
 
         <TextView
             android:id="@+id/tvProductPrice"
@@ -57,21 +57,27 @@
             android:layout_marginBottom="12dp"
             android:text="$4.00"
             android:textColor="@color/carmine_pink"
-            android:textSize="15sp"
+            android:textSize="14sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
         <Button
-            android:id="@+id/btnAddProduct"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:id="@+id/btnAdd"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
             android:background="@drawable/sh_btn_carmine_pink"
+            android:padding="0dp"
             android:text="+"
             android:textColor="@color/white"
-            android:textSize="18sp"
+            android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
 </androidx.cardview.widget.CardView>
