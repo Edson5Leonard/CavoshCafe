@@ -4,9 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.HomeFragment">
+    tools:context=".ui.Inicio">
 
-    <!-- Header superior con fondo azul/oscuro -->
+    <!-- Header superior -->
     <TextView
         android:id="@+id/tvHeaderHome"
         android:layout_width="match_parent"
@@ -75,7 +75,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/ivNotification"/>
 
-    <!-- Barra de búsqueda superpuesta -->
+    <!-- Buscador -->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tilSearch"
         android:layout_width="0dp"
@@ -112,7 +112,7 @@
         app:layout_constraintTop_toTopOf="@id/tilSearch"
         app:layout_constraintVertical_bias="0.55"/>
 
-    <!-- Sección: Nuevo (Horizontal Scroll) -->
+    <!-- Título Nuevo -->
     <TextView
         android:id="@+id/tvNewInTitle"
         android:layout_width="wrap_content"
@@ -124,169 +124,25 @@
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tilSearch"/>
+        app:layout_constraintTop_toBottomOf="@id/tilSearch" />
 
-    <HorizontalScrollView
-        android:id="@+id/hsvNewItems"
+    <!-- RecyclerView Horizontal (Nuevos productos) -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvNewProducts"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:scrollbars="none"
-        app:layout_constraintTop_toBottomOf="@id/tvNewInTitle"
+        android:clipToPadding="false"
+        android:orientation="horizontal"
+        android:paddingHorizontal="16dp"
+        android:paddingBottom="8dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/tvNewInTitle"
+        tools:listitem="@layout/item_product_card" />
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingHorizontal="16dp"
-            android:paddingBottom="8dp">
-
-            <!-- Tarjeta 1: Caramel Macchiato -->
-            <androidx.cardview.widget.CardView
-                android:layout_width="150dp"
-                android:layout_height="210dp"
-                android:layout_margin="8dp"
-                app:cardCornerRadius="24dp"
-                app:cardElevation="4dp">
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@color/white">
-
-                    <View
-                        android:id="@+id/viewBgImage1"
-                        android:layout_width="0dp"
-                        android:layout_height="110dp"
-                        android:layout_margin="8dp"
-                        android:background="@drawable/tv_bright_gray"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"/>
-
-                    <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:src="@drawable/ic_cafe_muestra"
-                        app:layout_constraintTop_toTopOf="@id/viewBgImage1"
-                        app:layout_constraintBottom_toBottomOf="@id/viewBgImage1"
-                        app:layout_constraintStart_toStartOf="@id/viewBgImage1"
-                        app:layout_constraintEnd_toEndOf="@id/viewBgImage1"/>
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="12dp"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginEnd="8dp"
-                        android:text="Caramel Macchiato"
-                        android:textColor="@color/gunmetal"
-                        android:textSize="13sp"
-                        android:textStyle="bold"
-                        app:layout_constraintTop_toBottomOf="@id/viewBgImage1"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="12dp"
-                        android:layout_marginBottom="12dp"
-                        android:text="$4.00"
-                        android:textColor="@color/carmine_pink"
-                        android:textSize="15sp"
-                        android:textStyle="bold"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"/>
-
-                    <Button
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:background="@drawable/sh_btn_carmine_pink"
-                        android:text="+"
-                        android:textColor="@color/white"
-                        android:textSize="18sp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"/>
-                </androidx.constraintlayout.widget.ConstraintLayout>
-            </androidx.cardview.widget.CardView>
-
-            <!-- Tarjeta 2: Vanilla Latte -->
-            <androidx.cardview.widget.CardView
-                android:layout_width="150dp"
-                android:layout_height="210dp"
-                android:layout_margin="8dp"
-                app:cardCornerRadius="24dp"
-                app:cardElevation="4dp">
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@color/white">
-
-                    <View
-                        android:id="@+id/viewBgImage2"
-                        android:layout_width="0dp"
-                        android:layout_height="110dp"
-                        android:layout_margin="8dp"
-                        android:background="@drawable/tv_bright_gray"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"/>
-
-                    <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:src="@drawable/ic_cafe_muestra"
-                        app:layout_constraintTop_toTopOf="@id/viewBgImage2"
-                        app:layout_constraintBottom_toBottomOf="@id/viewBgImage2"
-                        app:layout_constraintStart_toStartOf="@id/viewBgImage2"
-                        app:layout_constraintEnd_toEndOf="@id/viewBgImage2"/>
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="12dp"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginEnd="8dp"
-                        android:text="Vanilla Latte"
-                        android:textColor="@color/gunmetal"
-                        android:textSize="13sp"
-                        android:textStyle="bold"
-                        app:layout_constraintTop_toBottomOf="@id/viewBgImage2"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="12dp"
-                        android:layout_marginBottom="12dp"
-                        android:text="$3.00"
-                        android:textColor="@color/carmine_pink"
-                        android:textSize="15sp"
-                        android:textStyle="bold"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"/>
-
-                    <Button
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:background="@drawable/sh_btn_carmine_pink"
-                        android:text="+"
-                        android:textColor="@color/white"
-                        android:textSize="18sp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"/>
-                </androidx.constraintlayout.widget.ConstraintLayout>
-            </androidx.cardview.widget.CardView>
-
-        </LinearLayout>
-    </HorizontalScrollView>
-
-    <!-- Sección: Frequently ordered -->
+    <!-- Título Frecuentes -->
     <TextView
         android:id="@+id/tvFrequentlyTitle"
         android:layout_width="wrap_content"
@@ -298,85 +154,21 @@
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/hsvNewItems"/>
+        app:layout_constraintTop_toBottomOf="@id/rvNewProducts"/>
 
-    <!-- Tarjeta horizontal estilo lista (Frequently ordered) -->
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardFrequentItem"
+    <!-- RecyclerView Vertical (Frequently Ordered) -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvFrequentProducts"
         android:layout_width="0dp"
-        android:layout_height="75dp"
-        android:layout_marginHorizontal="24dp"
+        android:layout_height="0dp"
         android:layout_marginTop="8dp"
-        app:cardCornerRadius="16dp"
-        app:cardElevation="3dp"
-        app:layout_constraintStart_toStartOf="parent"
+        android:clipToPadding="false"
+        android:paddingBottom="16dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvFrequentlyTitle">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/white">
-
-            <ImageView
-                android:id="@+id/ivCoffeeFreq"
-                android:layout_width="55dp"
-                android:layout_height="55dp"
-                android:layout_marginStart="10dp"
-                android:src="@drawable/ic_cafe_menu"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/tvCoffeeNameFreq"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="12dp"
-                android:layout_marginTop="12dp"
-                android:text="Caramel Macchiato"
-                android:textColor="@color/gunmetal"
-                android:textSize="13sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toEndOf="@id/ivCoffeeFreq"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/tvCoffeeDescFreq"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="12dp"
-                android:text="Large, Oat milk"
-                android:textColor="@color/gunmetal"
-                android:textSize="11sp"
-                app:layout_constraintStart_toEndOf="@id/ivCoffeeFreq"
-                app:layout_constraintTop_toBottomOf="@id/tvCoffeeNameFreq" />
-
-            <TextView
-                android:id="@+id/tvPriceFreq"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="12dp"
-                android:text="$6.70"
-                android:textColor="@color/carmine_pink"
-                android:textSize="13sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toEndOf="@id/ivCoffeeFreq"
-                app:layout_constraintTop_toBottomOf="@id/tvCoffeeDescFreq" />
-
-            <Button
-                android:layout_width="48dp"
-                android:layout_height="0dp"
-                android:background="@drawable/sh_btn_carmine_pink"
-                android:text="+"
-                android:textColor="@color/white"
-                android:textSize="18sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.cardview.widget.CardView>
-
-
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvFrequentlyTitle"
+        tools:listitem="@layout/item_frequent_card" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Curvatura inferior del Header -->
+    <style name="ShapeAppearance.Header" parent="ShapeAppearance.MaterialComponents">
+        <item name="cornerSizeBottomLeft">32dp</item>
+        <item name="cornerSizeBottomRight">32dp</item>
+    </style>
+
+    <!-- Curvatura del botón '+' alineado a la esquina -->
+    <style name="ShapeAppearance.ButtonAdd" parent="ShapeAppearance.MaterialComponents">
+        <item name="cornerSizeTopLeft">16dp</item>
+        <item name="cornerSizeBottomRight">24dp</item>
+        <item name="cornerSizeTopRight">0dp</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
+    </style>
+</resources>
