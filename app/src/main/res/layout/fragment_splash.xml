@@ -25,13 +25,13 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:contentDescription="@string/content_description"
-        android:src="@drawable/ic_cofe_logo"
+        android:src="@drawable/logo"
         app:layout_constraintHeight_percent="0.45"
         app:layout_constraintWidth_percent="0.85"
-        app:layout_constraintBottom_toTopOf="@+id/tvWelcome"
+        app:layout_constraintBottom_toTopOf="Bienvenido a "
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgLogoBeans" />
+        app:layout_constraintTop_toBottomOf="" />
 
 
     <TextView

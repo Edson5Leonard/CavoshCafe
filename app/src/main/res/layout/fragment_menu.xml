@@ -67,33 +67,35 @@
         app:layout_constraintTop_toBottomOf="@id/tilSearchMenu" />
 
     <!-- RecyclerView Horizontal para Categorías -->
+
+    <!-- RecyclerView Grid para Productos -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvCategories"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:clipToPadding="false"
-        android:orientation="horizontal"
-        android:paddingHorizontal="24dp"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:paddingHorizontal="16dp"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:spanCount="3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvCategoriesTitle" />
 
-    <!-- RecyclerView Grid para Productos -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvMenuProducts"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="12dp"
-        android:paddingHorizontal="16dp"
         android:clipToPadding="false"
+        android:paddingHorizontal="16dp"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-        app:spanCount="2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/rvCategories"
+        app:layout_constraintVertical_bias="1.0"
+        app:spanCount="2"
         tools:listitem="@layout/item_product_card" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
